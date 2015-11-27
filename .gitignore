@@ -1,0 +1,5 @@
+/nbproject/private/
+/src/vendor/
+/data/*
+!/data/link.txt
+

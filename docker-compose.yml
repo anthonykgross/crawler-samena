@@ -1,0 +1,46 @@
+crawlersamena0:
+  image: crawler-samena:latest
+  volumes:
+    - ./docker/php5:/etc/php5
+    - ./src:/home/crawlersamena
+    - ./data/:/data
+  environment:
+    - CRAWLER_START_DATE=2015-11-27 00:00:00
+    - CRAWLER_END_DATE=2015-11-27 23:59:59   
+    
+crawlersamena1:
+  image: crawler-samena:latest
+  volumes:
+    - ./docker/php5:/etc/php5
+    - ./src:/home/crawlersamena
+    - ./data/:/data
+  environment:
+    - CRAWLER_START_DATE=2015-11-26 00:00:00
+    - CRAWLER_END_DATE=2015-11-26 23:59:59
+    
+crawlersamena2:
+  image: crawler-samena:latest
+  volumes:
+    - ./docker/php5:/etc/php5
+    - ./src:/home/crawlersamena
+    - ./data/:/data
+  environment:
+    - CRAWLER_START_DATE=2015-11-25 00:00:00
+    - CRAWLER_END_DATE=2015-11-25 23:59:59
+    
+crawlersamena3:
+  image: crawler-samena:latest
+  volumes:
+    - ./docker/php5:/etc/php5
+    - ./src:/home/crawlersamena
+    - ./data/:/data
+  environment:
+    - CRAWLER_START_DATE=2015-11-24 00:00:00
+    - CRAWLER_END_DATE=2015-11-24 23:59:59
+    
+crawlersamena4:
+  image: crawler-samena:latest
+  volumes:
+    - ./docker/php5:/etc/php5
+    - ./src:/home/crawlersamena
+    - ./data/:/data
