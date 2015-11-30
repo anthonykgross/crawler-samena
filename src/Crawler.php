@@ -93,9 +93,11 @@ class Crawler {
                 throw new Exception("Pic Id not found");
             }
             $id_pic     = str_replace(".jpg", "", $ids[0]);
-            $name_pic   = date('Y-m-d_h:i:s', $id_pic).".jpg";
+            $name_pic   = date('Y-m-d_H:i:s', $id_pic).".jpg";
             file_put_contents($this->current_data_folder."/".$name_pic, $content);
+            var_dump(" ==> Downloading : ".$this->current_data_folder."/".$name_pic);
         }
+        $this->pics = array();
     }
     
     private function createFolder(){
@@ -136,9 +138,12 @@ class Crawler {
                 
                 preg_match('/[0-9]{3}/', $headers[0], $http_code);
                 var_dump($url_pic_final);
-                var_dump(date('Y-m-d_h:i:s', $i));
+                var_dump(date('Y-m-d_H:i:s', $i));
                 if($http_code[0] == 200){
                     file_put_contents($this->data_folder."/link.txt", $url_pic_final."\n", FILE_APPEND);
+                    $this->pics[] = $url_pic_final;
+                    $this->createFolder();
+                    $this->downloadPics();
                     $i          += 3600;
                 }
             }
