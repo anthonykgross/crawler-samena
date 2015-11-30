@@ -8,7 +8,7 @@ if($argv[1] == "FALSE" || $argv[2] == "FALSE"){
     while(true){
         Crawler::getInstance()->run();
         var_dump("Waiting $seconds sec.");
-        sleep(10);
+        sleep($seconds);
     }
 }
 else{
