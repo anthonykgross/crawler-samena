@@ -94,8 +94,11 @@ class Crawler {
             }
             $id_pic     = str_replace(".jpg", "", $ids[0]);
             $name_pic   = date('Y-m-d_H:i:s', $id_pic).".jpg";
-            file_put_contents($this->current_data_folder."/".$name_pic, $content);
-            var_dump(" ==> Downloading : ".$this->current_data_folder."/".$name_pic);
+            
+            if(!file_exists($this->current_data_folder."/".$name_pic)){
+                file_put_contents($this->current_data_folder."/".$name_pic, $content);
+                var_dump(" ==> Downloading : ".$this->current_data_folder."/".$name_pic);
+            }
         }
         $this->pics = array();
     }
